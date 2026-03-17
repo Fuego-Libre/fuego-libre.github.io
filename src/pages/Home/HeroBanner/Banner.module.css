@@ -1,0 +1,5 @@
+.banner {
+  background: url('https://images.pexels.com/photos/289586/pexels-photo-289586.jpeg?cs=srgb&dl=pexels-pixabay-289586.jpg&fm=jpg')
+    center center no-repeat;
+  background-size: cover;
+}
