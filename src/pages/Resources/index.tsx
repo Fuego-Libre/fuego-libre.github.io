@@ -1,6 +1,5 @@
 import { Link } from 'react-router';
 import PageHeader from '@/components/ui/PageHeader';
-import SectionLabel from '@/components/ui/SectionLabel';
 import Newsletter from '@/components/ui/Newsletter';
 
 const resources = [

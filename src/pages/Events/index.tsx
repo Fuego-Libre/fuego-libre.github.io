@@ -2,7 +2,6 @@ import { Link } from 'react-router';
 import PageHeader from '@/components/ui/PageHeader';
 import SectionLabel from '@/components/ui/SectionLabel';
 import Newsletter from '@/components/ui/Newsletter';
-import { LocationIcon } from '@/components/ui/Icons';
 
 const upcomingEvents = [
   {
