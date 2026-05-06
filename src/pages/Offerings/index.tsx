@@ -1,14 +1,8 @@
 import { Link } from 'react-router';
 import PageHeader from '@/components/ui/PageHeader';
 import SectionLabel from '@/components/ui/SectionLabel';
-import { EnergyIcon, NutritionIcon, HeartIcon, CommunityIcon } from '@/components/ui/Icons';
-
-const quickNavItems = [
-  { id: 'energy', label: 'Energy Healing' },
-  { id: 'nutrition', label: 'Nutrition & Herbalism' },
-  { id: 'movement', label: 'Movement & Mindfulness' },
-  { id: 'community', label: 'Community Workshops' },
-];
+import { EnergyIcon, NutritionIcon, HeartIcon, CommunityIcon } from '@/components/icons';
+import { quickNavItems } from './constants';
 
 function OfferingsPage() {
   return (

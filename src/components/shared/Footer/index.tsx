@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { InstagramIcon, FacebookIcon } from '@/components/ui/Icons';
+import { InstagramIcon, FacebookIcon } from '@/components/icons';
 
 const Footer = () => {
   return (

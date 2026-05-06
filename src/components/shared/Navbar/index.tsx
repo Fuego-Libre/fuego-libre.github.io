@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
-
-const navLinks = [
-  { to: '/about', label: 'About' },
-  { to: '/offerings', label: 'Offerings' },
-  { to: '/events', label: 'Events' },
-  { to: '/testimonials', label: 'Testimonials' },
-  { to: '/resources', label: 'Resources' },
-  { to: '/contact', label: 'Contact' },
-];
+import { navLinks } from './constants';
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

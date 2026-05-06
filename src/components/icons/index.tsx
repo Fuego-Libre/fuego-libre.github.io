@@ -1,0 +1,10 @@
+export type { IconProps } from './types';
+export { EnergyIcon } from './EnergyIcon';
+export { NutritionIcon } from './NutritionIcon';
+export { HeartIcon } from './HeartIcon';
+export { CommunityIcon } from './CommunityIcon';
+export { InstagramIcon } from './InstagramIcon';
+export { FacebookIcon } from './FacebookIcon';
+export { EmailIcon } from './EmailIcon';
+export { LocationIcon } from './LocationIcon';
+export { ClockIcon } from './ClockIcon';
