@@ -2,6 +2,8 @@ import { Link } from 'react-router';
 import PageHeader from '@/components/ui/PageHeader';
 import SectionLabel from '@/components/ui/SectionLabel';
 import Newsletter from '@/components/ui/Newsletter';
+import Section from '@/components/shared/Section';
+import PlaceholderImage from '@/components/shared/PlaceholderImage';
 import { upcomingEvents, galleryGradients } from './constants';
 
 function EventsPage() {
@@ -14,7 +16,7 @@ function EventsPage() {
       />
 
       {/* Upcoming Events */}
-      <section className="px-6 lg:px-24 py-20 bg-cream">
+      <Section bg="cream">
         <div className="mb-12">
           <h2 className="font-display text-3xl text-deep-earth mb-4">Upcoming Community Offerings</h2>
           <p className="text-sm text-charcoal font-light">
@@ -87,10 +89,10 @@ function EventsPage() {
             </div>
           ))}
         </div>
-      </section>
+      </Section>
 
       {/* Private Events */}
-      <section className="px-6 lg:px-24 py-16 bg-sage/20">
+      <Section bg="sage-soft" padding="md">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="font-display text-2xl md:text-3xl text-deep-earth mb-4">
             Host a Private Event
@@ -106,10 +108,10 @@ function EventsPage() {
             Inquire About Private Events
           </Link>
         </div>
-      </section>
+      </Section>
 
       {/* Past Events Gallery */}
-      <section className="px-6 lg:px-24 py-20 bg-warm-sand">
+      <Section bg="warm-sand">
         <div className="mb-12">
           <SectionLabel>Past Gatherings</SectionLabel>
           <h2 className="font-display text-3xl text-deep-earth">Event Gallery</h2>
@@ -117,15 +119,10 @@ function EventsPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryGradients.map((gradient, index) => (
-            <div
-              key={index}
-              className={`aspect-square bg-gradient-to-br ${gradient} flex items-center justify-center`}
-            >
-              <span className="text-cream/50 text-sm font-display italic">[ Photo ]</span>
-            </div>
+            <PlaceholderImage key={index} gradient={gradient} aspect="square" />
           ))}
         </div>
-      </section>
+      </Section>
 
       <Newsletter
         title="Never Miss an Event"

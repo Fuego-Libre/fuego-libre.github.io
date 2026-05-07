@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
 import PageHeader from '@/components/ui/PageHeader';
 import SectionLabel from '@/components/ui/SectionLabel';
+import Section from '@/components/shared/Section';
+import BorderedCard from '@/components/shared/BorderedCard';
 import { EnergyIcon, NutritionIcon, HeartIcon, CommunityIcon } from '@/components/icons';
 import { quickNavItems } from './constants';
 
@@ -14,7 +16,7 @@ function OfferingsPage() {
       />
 
       {/* Quick Navigation */}
-      <section className="px-6 lg:px-24 py-8 bg-cream border-b border-warm-sand">
+      <Section bg="cream" padding="sm" className="border-b border-warm-sand">
         <div className="flex flex-wrap gap-4 justify-center">
           {quickNavItems.map((item) => (
             <a
@@ -26,10 +28,10 @@ function OfferingsPage() {
             </a>
           ))}
         </div>
-      </section>
+      </Section>
 
       {/* Energy Healing */}
-      <section id="energy" className="px-6 lg:px-24 py-20 bg-cream scroll-mt-24">
+      <Section bg="cream" id="energy" className="scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <div className="w-16 h-16 mb-6 text-terracotta">
@@ -53,7 +55,7 @@ function OfferingsPage() {
             </Link>
           </div>
           <div className="space-y-6">
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-terracotta">
+            <BorderedCard borderColor="terracotta">
               <h3 className="font-display text-xl text-deep-earth mb-2">Chakra Balancing</h3>
               <p className="text-sm text-charcoal font-light leading-relaxed mb-3">
                 Restore energetic flow through the body's sacred centers using breath, sound, and
@@ -61,8 +63,8 @@ function OfferingsPage() {
                 personalized practices.
               </p>
               <p className="text-xs text-sage">60-90 minutes</p>
-            </div>
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-ochre">
+            </BorderedCard>
+            <BorderedCard borderColor="ochre">
               <h3 className="font-display text-xl text-deep-earth mb-2">
                 Limpia-Inspired Energy Work
               </h3>
@@ -71,8 +73,8 @@ function OfferingsPage() {
                 sound, and prayer to clear heavy energies and restore spiritual equilibrium.
               </p>
               <p className="text-xs text-sage">60-90 minutes</p>
-            </div>
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-clay">
+            </BorderedCard>
+            <BorderedCard borderColor="clay">
               <h3 className="font-display text-xl text-deep-earth mb-2">
                 Sound Healing & Sound Baths
               </h3>
@@ -81,10 +83,10 @@ function OfferingsPage() {
                 restore harmony. Available as private sessions or group experiences.
               </p>
               <p className="text-xs text-sage">60-90 minutes (private) | Group sessions vary</p>
-            </div>
+            </BorderedCard>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Divider */}
       <div className="px-6 lg:px-24">
@@ -92,7 +94,7 @@ function OfferingsPage() {
       </div>
 
       {/* Holistic Nutrition & Herbalism */}
-      <section id="nutrition" className="px-6 lg:px-24 py-20 bg-cream scroll-mt-24">
+      <Section bg="cream" id="nutrition" className="scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="lg:order-2">
             <div className="w-16 h-16 mb-6 text-sage">
@@ -115,7 +117,7 @@ function OfferingsPage() {
             </Link>
           </div>
           <div className="lg:order-1 space-y-6">
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-sage">
+            <BorderedCard borderColor="sage">
               <h3 className="font-display text-xl text-deep-earth mb-2">
                 Holistic Nutrition Coaching
               </h3>
@@ -124,16 +126,16 @@ function OfferingsPage() {
                 Medicine principles. Includes assessment, meal planning, and ongoing support.
               </p>
               <p className="text-xs text-sage">Initial consultation 90 min | Follow-ups 60 min</p>
-            </div>
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-terracotta">
+            </BorderedCard>
+            <BorderedCard borderColor="terracotta">
               <h3 className="font-display text-xl text-deep-earth mb-2">Herbal Offerings</h3>
               <p className="text-sm text-charcoal font-light leading-relaxed mb-3">
                 Custom herbal formulas, teas, and preparations crafted for your unique constitution
                 and healing needs. Includes consultation and education on working with plant allies.
               </p>
               <p className="text-xs text-sage">Consultation + custom preparation</p>
-            </div>
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-ochre">
+            </BorderedCard>
+            <BorderedCard borderColor="ochre">
               <h3 className="font-display text-xl text-deep-earth mb-2">
                 Seasonal Food-as-Medicine Guidance
               </h3>
@@ -142,10 +144,10 @@ function OfferingsPage() {
                 Includes seasonal recipes, shopping guides, and cooking practices.
               </p>
               <p className="text-xs text-sage">Seasonal packages available</p>
-            </div>
+            </BorderedCard>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Divider */}
       <div className="px-6 lg:px-24">
@@ -153,7 +155,7 @@ function OfferingsPage() {
       </div>
 
       {/* Movement & Mindfulness */}
-      <section id="movement" className="px-6 lg:px-24 py-20 bg-cream scroll-mt-24">
+      <Section bg="cream" id="movement" className="scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <div className="w-16 h-16 mb-6 text-ochre">
@@ -176,33 +178,33 @@ function OfferingsPage() {
             </Link>
           </div>
           <div className="space-y-6">
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-ochre">
+            <BorderedCard borderColor="ochre">
               <h3 className="font-display text-xl text-deep-earth mb-2">Yoga Sessions</h3>
               <p className="text-sm text-charcoal font-light leading-relaxed mb-3">
                 Private and small group sessions in Somatic, Restorative, Flow, and Chakra-based
                 yoga. Each session is tailored to your body's needs and healing goals.
               </p>
               <p className="text-xs text-sage">60-90 minutes | Private or small group</p>
-            </div>
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-terracotta">
+            </BorderedCard>
+            <BorderedCard borderColor="terracotta">
               <h3 className="font-display text-xl text-deep-earth mb-2">Meditation</h3>
               <p className="text-sm text-charcoal font-light leading-relaxed mb-3">
                 Guided meditation sessions drawing from contemplative traditions. Learn practices for
                 daily ritual, stress relief, and spiritual connection.
               </p>
               <p className="text-xs text-sage">30-60 minutes</p>
-            </div>
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-clay">
+            </BorderedCard>
+            <BorderedCard borderColor="clay">
               <h3 className="font-display text-xl text-deep-earth mb-2">Breathwork</h3>
               <p className="text-sm text-charcoal font-light leading-relaxed mb-3">
                 Conscious breathing practices for nervous system regulation, emotional release, and
                 expanded states of awareness. Includes integration support.
               </p>
               <p className="text-xs text-sage">60-90 minutes</p>
-            </div>
+            </BorderedCard>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Divider */}
       <div className="px-6 lg:px-24">
@@ -210,7 +212,7 @@ function OfferingsPage() {
       </div>
 
       {/* Community Workshops & Education */}
-      <section id="community" className="px-6 lg:px-24 py-20 bg-cream scroll-mt-24">
+      <Section bg="cream" id="community" className="scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="lg:order-2">
             <div className="w-16 h-16 mb-6 text-clay">
@@ -232,15 +234,15 @@ function OfferingsPage() {
             </Link>
           </div>
           <div className="lg:order-1 space-y-6">
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-clay">
+            <BorderedCard borderColor="clay">
               <h3 className="font-display text-xl text-deep-earth mb-2">Herbal Medicine Classes</h3>
               <p className="text-sm text-charcoal font-light leading-relaxed mb-3">
                 Learn to work with medicinal plants through hands-on workshops. Topics include
                 medicine making, plant identification, and creating home apothecaries.
               </p>
               <p className="text-xs text-sage">2-3 hours | Check events for schedule</p>
-            </div>
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-sage">
+            </BorderedCard>
+            <BorderedCard borderColor="sage">
               <h3 className="font-display text-xl text-deep-earth mb-2">
                 Food Justice & Ancestral Nourishment
               </h3>
@@ -249,8 +251,8 @@ function OfferingsPage() {
                 community health. Includes cooking demos and discussion.
               </p>
               <p className="text-xs text-sage">2-3 hours | Check events for schedule</p>
-            </div>
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-terracotta">
+            </BorderedCard>
+            <BorderedCard borderColor="terracotta">
               <h3 className="font-display text-xl text-deep-earth mb-2">
                 Sound Baths & Healing Circles
               </h3>
@@ -259,21 +261,21 @@ function OfferingsPage() {
                 A space to rest, receive, and be held.
               </p>
               <p className="text-xs text-sage">90 minutes | Monthly</p>
-            </div>
-            <div className="offering-item bg-warm-sand p-6 border-l-4 border-ochre">
+            </BorderedCard>
+            <BorderedCard borderColor="ochre">
               <h3 className="font-display text-xl text-deep-earth mb-2">Community Wellness Events</h3>
               <p className="text-sm text-charcoal font-light leading-relaxed mb-3">
                 Seasonal celebrations, healing markets, and special gatherings that bring together
                 practitioners and community for collective wellbeing.
               </p>
               <p className="text-xs text-sage">Varies | Check events for schedule</p>
-            </div>
+            </BorderedCard>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-24 py-20 bg-deep-earth text-cream text-center">
+      <Section bg="deep-earth" textColor="cream" className="text-center">
         <h2 className="font-display text-3xl md:text-4xl font-normal mb-6">
           Not Sure Where to Start?
         </h2>
@@ -287,7 +289,7 @@ function OfferingsPage() {
         >
           Schedule a Call
         </Link>
-      </section>
+      </Section>
     </>
   );
 }

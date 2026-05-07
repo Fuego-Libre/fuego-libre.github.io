@@ -1,5 +1,6 @@
 import PageHeader from '@/components/ui/PageHeader';
 import CTASection from '@/components/ui/CTASection';
+import Section from '@/components/shared/Section';
 import { testimonials } from './constants';
 
 function TestimonialsPage() {
@@ -12,7 +13,7 @@ function TestimonialsPage() {
       />
 
       {/* Featured Testimonial */}
-      <section className="px-6 lg:px-24 py-20 bg-deep-earth text-cream">
+      <Section bg="deep-earth" textColor="cream">
         <div className="max-w-4xl mx-auto text-center">
           <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-gradient-to-br from-terracotta to-ochre flex items-center justify-center">
             <span className="text-cream/70 text-xs font-display italic">Photo</span>
@@ -27,10 +28,10 @@ function TestimonialsPage() {
             <p className="text-clay text-sm">Energy Healing & Sound Bath Client</p>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Testimonials Grid */}
-      <section className="px-6 lg:px-24 py-20 bg-cream">
+      <Section bg="cream">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial) => (
             <div key={testimonial.initials} className="bg-warm-sand p-8 relative">
@@ -53,17 +54,17 @@ function TestimonialsPage() {
             </div>
           ))}
         </div>
-      </section>
+      </Section>
 
       {/* Placeholder Note */}
-      <section className="px-6 lg:px-24 py-12 bg-sage/20">
+      <Section bg="sage-soft" padding="sm" className="py-12">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-sm text-charcoal font-light italic">
             This page will grow as more community members share their experiences. If you've worked
             with Fuego Libre and would like to share your story, please reach out.
           </p>
         </div>
-      </section>
+      </Section>
 
       {/* CTA */}
       <CTASection

@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
 import PageHeader from '@/components/ui/PageHeader';
 import Newsletter from '@/components/ui/Newsletter';
+import Section from '@/components/shared/Section';
+import PlaceholderImage from '@/components/shared/PlaceholderImage';
 import { resources, categories } from './constants';
 
 function ResourcesPage() {
@@ -13,7 +15,7 @@ function ResourcesPage() {
       />
 
       {/* Category Filter */}
-      <section className="px-6 lg:px-24 py-8 bg-cream border-b border-warm-sand">
+      <Section bg="cream" padding="sm" className="border-b border-warm-sand">
         <div className="flex flex-wrap gap-4 justify-center">
           {categories.map((category, index) => (
             <button
@@ -28,14 +30,12 @@ function ResourcesPage() {
             </button>
           ))}
         </div>
-      </section>
+      </Section>
 
       {/* Featured Resource */}
-      <section className="px-6 lg:px-24 py-16 bg-cream">
+      <Section bg="cream" padding="md">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-sage/20 p-8 lg:p-12">
-          <div className="aspect-video bg-gradient-to-br from-sage to-clay flex items-center justify-center">
-            <span className="text-cream/50 text-sm font-display italic">[ Featured Image ]</span>
-          </div>
+          <PlaceholderImage gradient="from-sage to-clay" aspect="video" label="Featured Image" />
           <div>
             <p className="text-xs tracking-wider uppercase text-sage mb-3">Featured Resource</p>
             <h2 className="font-display text-3xl text-deep-earth mb-4">
@@ -53,18 +53,14 @@ function ResourcesPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Resources Grid */}
-      <section className="px-6 lg:px-24 py-16 bg-cream">
+      <Section bg="cream" padding="md">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resources.map((resource) => (
             <article key={resource.title} className="resource-card bg-warm-sand">
-              <div
-                className={`aspect-video bg-gradient-to-br ${resource.gradient} flex items-center justify-center`}
-              >
-                <span className="text-cream/50 text-sm font-display italic">[ Photo ]</span>
-              </div>
+              <PlaceholderImage gradient={resource.gradient} aspect="video" />
               <div className="p-6">
                 <p
                   className={`text-xs tracking-wider uppercase mb-2 ${
@@ -100,7 +96,7 @@ function ResourcesPage() {
             Load More Resources
           </button>
         </div>
-      </section>
+      </Section>
 
       <Newsletter
         title="Get Resources Delivered"

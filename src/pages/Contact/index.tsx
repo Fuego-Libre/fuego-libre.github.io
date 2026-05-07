@@ -1,4 +1,5 @@
 import PageHeader from '@/components/ui/PageHeader';
+import Section from '@/components/shared/Section';
 import { EmailIcon, LocationIcon, InstagramIcon } from '@/components/icons';
 import { interestOptions, pricingItems } from './constants';
 
@@ -12,7 +13,7 @@ function ContactPage() {
       />
 
       {/* Main Content */}
-      <section className="px-6 lg:px-24 py-20 bg-cream">
+      <Section bg="cream">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Form */}
           <div>
@@ -237,10 +238,10 @@ function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Availability */}
-      <section className="px-6 lg:px-24 py-16 bg-warm-sand">
+      <Section bg="warm-sand" padding="md">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="font-display text-2xl text-deep-earth mb-4">Current Availability</h3>
           <p className="text-sm text-charcoal font-light mb-6 leading-relaxed">
@@ -252,7 +253,7 @@ function ContactPage() {
             coaching, meditation, and certain yoga offerings.
           </p>
         </div>
-      </section>
+      </Section>
     </>
   );
 }

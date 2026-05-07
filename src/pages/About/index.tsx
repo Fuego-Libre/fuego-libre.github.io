@@ -1,6 +1,10 @@
 import PageHeader from '@/components/ui/PageHeader';
 import SectionLabel from '@/components/ui/SectionLabel';
 import CTASection from '@/components/ui/CTASection';
+import Section from '@/components/shared/Section';
+import SectionHeading from '@/components/shared/SectionHeading';
+import BorderedCard from '@/components/shared/BorderedCard';
+import PlaceholderImage from '@/components/shared/PlaceholderImage';
 import { values, trainingAreas, certificationGradients, communityAreas } from './constants';
 
 function AboutPage() {
@@ -13,11 +17,12 @@ function AboutPage() {
       />
 
       {/* About Fuego Libre */}
-      <section className="px-6 lg:px-24 py-20 bg-cream">
+      <Section bg="cream">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="aspect-[4/5] bg-gradient-to-br from-terracotta via-ochre to-clay flex items-center justify-center">
-            <span className="text-cream/50 text-sm font-display italic">[ Photo ]</span>
-          </div>
+          <PlaceholderImage
+            gradient="from-terracotta via-ochre to-clay"
+            aspect="portrait"
+          />
           <div>
             <SectionLabel color="sage">About Fuego Libre</SectionLabel>
             <h2 className="font-display text-3xl md:text-4xl font-normal text-deep-earth mb-6">
@@ -39,39 +44,37 @@ function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Mission & Values */}
-      <section className="px-6 lg:px-24 py-20 bg-warm-sand">
-        <div className="text-center mb-16">
-          <SectionLabel color="terracotta" centered>
-            Mission & Values
-          </SectionLabel>
-          <h2 className="font-display text-3xl md:text-4xl font-normal text-deep-earth">
-            The Foundation of This Work
-          </h2>
-        </div>
+      <Section bg="warm-sand">
+        <SectionHeading
+          label="Mission & Values"
+          title="The Foundation of This Work"
+          centered
+          className="mb-16"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {values.map((value) => (
-            <div
+            <BorderedCard
               key={value.title}
-              className={`bg-cream p-8 border-l-4 border-${value.color}`}
+              borderColor={value.color as 'terracotta' | 'sage' | 'ochre'}
+              bg="cream"
+              padding="md"
             >
               <h3 className="font-display text-2xl text-deep-earth mb-4">{value.title}</h3>
               <p className="text-sm text-charcoal font-light leading-relaxed">{value.description}</p>
-            </div>
+            </BorderedCard>
           ))}
         </div>
-      </section>
+      </Section>
 
       {/* My Healing Journey */}
-      <section className="px-6 lg:px-24 py-20 bg-cream">
+      <Section bg="cream">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="lg:order-2">
-            <div className="aspect-square bg-gradient-to-br from-sage via-clay to-terracotta flex items-center justify-center">
-              <span className="text-cream/50 text-sm font-display italic">[ Portrait ]</span>
-            </div>
+            <PlaceholderImage gradient="from-sage via-clay to-terracotta" aspect="square" />
           </div>
           <div className="lg:order-1">
             <SectionLabel color="ochre">My Healing Journey</SectionLabel>
@@ -96,22 +99,26 @@ function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Lineages & Training */}
-      <section className="px-6 lg:px-24 py-20 bg-deep-earth text-cream">
-        <div className="text-center mb-16">
-          <SectionLabel color="clay" centered>
-            Lineages & Training
-          </SectionLabel>
-          <h2 className="font-display text-3xl md:text-4xl font-normal">
-            Rooted in Tradition, Committed to Growth
-          </h2>
-        </div>
+      <Section bg="deep-earth" textColor="cream">
+        <SectionHeading
+          label="Lineages & Training"
+          labelColor="clay"
+          title="Rooted in Tradition, Committed to Growth"
+          centered
+          theme="dark"
+          className="mb-16"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {trainingAreas.map((area) => (
-            <div key={area.title} className={`bg-cream/10 p-6 border-l-4 border-${area.color}`}>
+            <BorderedCard
+              key={area.title}
+              borderColor={area.color as 'terracotta' | 'sage' | 'clay' | 'ochre'}
+              bg="cream-translucent"
+            >
               <h3 className="font-display text-xl mb-4">{area.title}</h3>
               <ul className="space-y-2 text-sm text-warm-sand/80">
                 {area.items.map((item) => (
@@ -121,71 +128,62 @@ function AboutPage() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </BorderedCard>
           ))}
         </div>
-      </section>
+      </Section>
 
       {/* Certifications */}
-      <section className="px-6 lg:px-24 py-20 bg-warm-sand">
-        <div className="text-center mb-12">
-          <SectionLabel color="sage" centered>
-            Certifications
-          </SectionLabel>
-          <h2 className="font-display text-3xl md:text-4xl font-normal text-deep-earth mb-4">
-            Formal Training & Recognition
-          </h2>
-          <p className="text-sm text-charcoal font-light max-w-2xl mx-auto">
-            While my deepest learning comes from lineage and lived experience, I've also pursued formal
-            training to deepen my practice and better serve my community.
-          </p>
-        </div>
+      <Section bg="warm-sand">
+        <SectionHeading
+          label="Certifications"
+          labelColor="sage"
+          title="Formal Training & Recognition"
+          description="While my deepest learning comes from lineage and lived experience, I've also pursued formal training to deepen my practice and better serve my community."
+          centered
+          className="mb-12"
+        />
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {certificationGradients.map((gradient, index) => (
-            <div
+            <PlaceholderImage
               key={index}
-              className={`aspect-square bg-gradient-to-br ${gradient} flex items-center justify-center p-4`}
-            >
-              <span className="text-cream/50 text-sm font-display italic text-center">
-                [ Certificate ]
-              </span>
-            </div>
+              gradient={gradient}
+              aspect="square"
+              label="Certificate"
+              className="p-4"
+            />
           ))}
         </div>
-      </section>
+      </Section>
 
       {/* Connection to Chicago & Community */}
-      <section className="px-6 lg:px-24 py-20 bg-cream">
+      <Section bg="cream">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <SectionLabel color="terracotta" centered>
-              Connection to Chicago & Community
-            </SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl font-normal text-deep-earth mb-4">
-              Rooted in Chicago's Healing Communities
-            </h2>
-            <p className="text-base text-charcoal font-light">
-              This practice is deeply connected to Chicago's vibrant communities and the healers, elders,
-              and teachers who continue to share their wisdom.
-            </p>
-          </div>
+          <SectionHeading
+            label="Connection to Chicago & Community"
+            title="Rooted in Chicago's Healing Communities"
+            description="This practice is deeply connected to Chicago's vibrant communities and the healers, elders, and teachers who continue to share their wisdom."
+            centered
+            className="mb-12"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {communityAreas.map((area) => (
-              <div
+              <BorderedCard
                 key={area.title}
-                className={`flex items-start gap-4 p-6 bg-warm-sand border-l-4 border-${area.color}`}
+                borderColor={area.color as 'terracotta' | 'sage' | 'clay' | 'ochre'}
+                className="flex items-start gap-4"
               >
                 <div>
                   <h3 className="font-display text-xl text-deep-earth mb-2">{area.title}</h3>
                   <p className="text-sm text-charcoal font-light">{area.description}</p>
                 </div>
-              </div>
+              </BorderedCard>
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* CTA */}
       <CTASection

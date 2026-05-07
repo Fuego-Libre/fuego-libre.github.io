@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
 import SectionLabel from '@/components/ui/SectionLabel';
 import Newsletter from '@/components/ui/Newsletter';
+import Section from '@/components/shared/Section';
+import SectionHeading from '@/components/shared/SectionHeading';
 import { offerings, upcomingEvents } from './constants';
 
 function HomePage() {
@@ -67,7 +69,7 @@ function HomePage() {
       </section>
 
       {/* Brief Intro Section */}
-      <section className="px-6 lg:px-24 py-20 bg-warm-sand">
+      <Section bg="warm-sand">
         <div className="max-w-4xl mx-auto text-center">
           <SectionLabel centered>The Practice</SectionLabel>
           <h2 className="font-display text-3xl md:text-4xl font-normal text-deep-earth mb-8 leading-relaxed">
@@ -79,21 +81,18 @@ function HomePage() {
             reclaiming their inner fire.
           </p>
         </div>
-      </section>
+      </Section>
 
       {/* Video Section */}
-      <section className="px-6 lg:px-24 py-20 lg:py-28 bg-cream">
+      <Section bg="cream" padding="lg">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <SectionLabel centered>Watch & Listen</SectionLabel>
-            <h2 className="font-display text-3xl md:text-4xl font-normal text-deep-earth mb-4">
-              Experience the Practice
-            </h2>
-            <p className="text-base leading-relaxed text-charcoal font-light max-w-2xl mx-auto">
-              Get a glimpse into the healing work and philosophy behind Fuego
-              Libre.
-            </p>
-          </div>
+          <SectionHeading
+            label="Watch & Listen"
+            title="Experience the Practice"
+            description="Get a glimpse into the healing work and philosophy behind Fuego Libre."
+            centered
+            className="mb-12"
+          />
 
           <div className="relative w-full aspect-video bg-deep-earth/5 overflow-hidden shadow-xl">
             <iframe
@@ -106,10 +105,10 @@ function HomePage() {
             ></iframe>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Offerings Preview */}
-      <section className="px-6 lg:px-24 py-20 lg:py-28 bg-cream">
+      <Section bg="cream" padding="lg">
         <div className="text-center mb-16">
           <SectionLabel centered>Mind, Body & Spirit</SectionLabel>
           <h2 className="font-display text-4xl md:text-5xl font-normal text-deep-earth mb-6">
@@ -150,10 +149,15 @@ function HomePage() {
             View All Offerings
           </Link>
         </div>
-      </section>
+      </Section>
 
       {/* Philosophy Quote */}
-      <section className="relative px-6 lg:px-24 py-20 lg:py-28 bg-deep-earth text-cream text-center overflow-hidden philosophy-dots">
+      <Section
+        bg="deep-earth"
+        textColor="cream"
+        padding="lg"
+        className="relative text-center overflow-hidden philosophy-dots"
+      >
         <blockquote className="quote-mark relative font-display text-2xl md:text-3xl lg:text-4xl italic leading-relaxed max-w-4xl mx-auto mb-8 z-10">
           Healing is not a destination but a sacred journey of returning home to
           yourself, your ancestors, and the living earth that holds us all.
@@ -161,10 +165,10 @@ function HomePage() {
         <p className="text-xs tracking-[0.2em] uppercase text-clay relative z-10">
           - Fuego Libre Philosophy
         </p>
-      </section>
+      </Section>
 
       {/* Upcoming Events Preview */}
-      <section className="px-6 lg:px-24 py-20 lg:py-28 bg-warm-sand">
+      <Section bg="warm-sand" padding="lg">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12">
           <div>
             <SectionLabel>Gather With Us</SectionLabel>
@@ -204,7 +208,7 @@ function HomePage() {
             </div>
           ))}
         </div>
-      </section>
+      </Section>
 
       {/* Newsletter Signup */}
       <Newsletter />
